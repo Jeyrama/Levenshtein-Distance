@@ -9,3 +9,18 @@ Your task is to implement a function which calculates the Levenshtein distance f
 
 
 // Solution
+
+function levenshtein(a, b) {
+  return distance(a, b, a.length, b.length)
+  
+  function distance(a, b, x, y) {
+    if (!x) return y
+    if (!y) return x
+    
+    return Math.min(
+      distance(a, b, x - 1, y) + 1,
+      distance(a, b, x, y - 1) + 1,
+      distance(a, b, x - 1, y - 1) + (a[x - 1] != b[y - 1] ? 1 : 0)
+    )
+  }
+}
