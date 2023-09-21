@@ -24,3 +24,5 @@ function levenshtein(a, b) {
     )
   }
 }
+
+//or
